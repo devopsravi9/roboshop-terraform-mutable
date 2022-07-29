@@ -11,9 +11,17 @@ module "vpc" {
   DEFAULT_VPC_RT =var.DEFAULT_VPC_RT
 }
 
-//module "subnet" {
-//  source = "github.com/devopsravi9/tf-module-vpc"
-//  PUBLIC_SUBNET_CIDR = var.PUBLIC_SUBNET_CIDR
-//  PRIVATE_SUBNET_CIDR = var.PRIVATE_SUBNET_CIDR
-//  AZ = var.AZ
-//}
+module "rds" {
+  source = "github.com/devopsravi9/tf-module-rds"
+  ENV = var.ENV
+  PROJECT = var.PROJECT
+  ENGINE = var.ENGINE
+  ENGINE_VERSION = var.ENGINE_VERSION
+  RDS_INSTANCE_CLASS = var.RDS_INSTANCE_CLASS
+  PRIVATE_SUBNET_ID = module.vpc.PRIVATE_SUBNET_ID
+  PORT = var.RDS_PORT
+  ALLOW_SG_CIDR = var.ALLOW_SG_CIDR
+  VPC_ID = module.vpc.VPC_ID
+  PG_FAMILY = var.PG_FAMILY
+  ALLOW_SG_CIDR = module.vpc.PRIVATE_SUBNET_ID
+}
