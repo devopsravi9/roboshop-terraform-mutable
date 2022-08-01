@@ -15,12 +15,26 @@ module "rds" {
   source = "github.com/devopsravi9/tf-module-rds"
   ENV = var.ENV
   PROJECT = var.PROJECT
-  ENGINE = var.ENGINE
-  ENGINE_VERSION = var.ENGINE_VERSION
+  RDS_ENGINE = var.RDS_ENGINE
+  RDS_ENGINE_VERSION = var.RDS_ENGINE_VERSION
   RDS_INSTANCE_CLASS = var.RDS_INSTANCE_CLASS
   PRIVATE_SUBNET_ID = module.vpc.PRIVATE_SUBNET_ID
   RGS_PORT = var.RGS_PORT
   VPC_ID = module.vpc.VPC_ID
-  PG_FAMILY = var.PG_FAMILY
+  RDS_PG_FAMILY = var.RDS_PG_FAMILY
+  ALLOW_SG_CIDR = module.vpc.PRIVATE_SUBNET_CIDR
+}
+
+module "docdb" {
+  source = "github.com/devopsravi9/tf-module-docdb"
+  ENV = var.ENV
+  PROJECT = var.PROJECT
+  DOCDB_ENGINE = var.DOCDB_ENGINE
+  DOCDB_ENGINE_VERSION = var.DOCDB_ENGINE_VERSION
+  DOCDB_INSTANCE_CLASS = var.DOCDB_INSTANCE_CLASS
+  PRIVATE_SUBNET_ID = module.vpc.PRIVATE_SUBNET_ID
+  DOCDB_PORT = var.DOCDB_PORT
+  VPC_ID = module.vpc.VPC_ID
+  DOCDB_PG_FAMILY = var.DOCDB_PG_FAMILY
   ALLOW_SG_CIDR = module.vpc.PRIVATE_SUBNET_CIDR
 }

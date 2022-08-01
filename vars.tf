@@ -11,11 +11,18 @@ variable "DEFAULT_VPC_CIDR" {}
 variable "DEFAULT_VPC_RT" {}
 
 //rds variables
-variable "ENGINE" {}
-variable "ENGINE_VERSION" {}
+variable "RDS_ENGINE" {}
+variable "RDS_ENGINE_VERSION" {}
 variable "RDS_INSTANCE_CLASS" {}
 //variable "PRIVATE_SUBNET_ID" {}
 variable "RGS_PORT" {}
 //variable "ALLOW_SG_CIDR" {}
 //variable "VPC_ID" {}
-variable "PG_FAMILY" {}
+variable "RDS_PG_FAMILY" {}
+
+//docdb
+variable "DOCDB_ENGINE" {}
+variable "DOCDB_ENGINE_VERSION" {}
+variable "DOCDB_INSTANCE_CLASS" {}
+variable "DOCDB_PORT" {}
+variable "DOCDB_PG_FAMILY" {}
