@@ -26,3 +26,11 @@ variable "DOCDB_ENGINE_VERSION" {}
 variable "DOCDB_INSTANCE_CLASS" {}
 variable "DOCDB_PORT" {}
 variable "DOCDB_PG_FAMILY" {}
+
+//elasticache
+variable "ELASTICACHE_ENGINE" {}
+variable "ELASTICACHE_ENGINE_VERSION" {}
+variable "ELASTICACHE_INSTANCE_CLASS" {}
+variable "ELASTICACHE_PORT" {}
+variable "ELASTICACHE_PG_FAMILY" {}
+variable "ELASTICACHE_NUM_OF_NODES" {}
