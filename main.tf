@@ -53,3 +53,14 @@ module "elasticache" {
   ALLOW_SG_CIDR = module.vpc.PRIVATE_SUBNET_CIDR
   NUM_OF_NODES = var.ELASTICACHE_NUM_OF_NODES
 }
+
+module "rabbitmq" {
+  source = "github.com/devopsravi9/tf-module-rabbitmq"
+  ENV = var.ENV
+  PROJECT = var.PROJECT
+  INSTANCE_TYPE = var.RABBITMQ_INSTANCE_TYPE
+  PRIVATE_SUBNET_ID = module.vpc.PRIVATE_SUBNET_ID
+  PORT = var.RABBITMQ_PORT
+  VPC_ID = module.vpc.VPC_ID
+  ALLOW_SG_CIDR = module.vpc.PRIVATE_SUBNET_CIDR
+}
