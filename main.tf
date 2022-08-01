@@ -39,7 +39,7 @@ module "docdb" {
   ALLOW_SG_CIDR = module.vpc.PRIVATE_SUBNET_CIDR
 }
 
-module "docdb" {
+module "elasticache" {
   source = "github.com/devopsravi9/tf-module-elasticache"
   ENV = var.ENV
   PROJECT = var.PROJECT
