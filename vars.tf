@@ -38,3 +38,4 @@ variable "ELASTICACHE_NUM_OF_NODES" {}
 //rabbitmq
 variable "RABBITMQ_INSTANCE_TYPE" {}
 variable "RABBITMQ_PORT" {}
+variable "WORKSTATION_IP" {}

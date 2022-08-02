@@ -63,4 +63,5 @@ module "rabbitmq" {
   PORT = var.RABBITMQ_PORT
   VPC_ID = module.vpc.VPC_ID
   ALLOW_SG_CIDR = module.vpc.PRIVATE_SUBNET_CIDR
+  WORKSTATION_IP = var.WORKSTATION_IP
 }
