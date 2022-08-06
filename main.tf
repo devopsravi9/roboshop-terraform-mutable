@@ -79,7 +79,6 @@ module "LB" {
 module "FRONTEND" {
   source = "github.com/devopsravi9/tf-module-mutable-app"
   ENV                   = var.ENV
-  PROJECT               = var.PROJECT
   PRIVATE_SUBNET_ID     = module.vpc.PRIVATE_SUBNET_ID
   VPC_ID                = module.vpc.VPC_ID
   ALLOW_SG_CIDR         = module.vpc.PRIVATE_SUBNET_CIDR
