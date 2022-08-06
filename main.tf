@@ -90,3 +90,73 @@ module "FRONTEND" {
   //INSTANCE_COUNT        = 1
   LB_ARN                = module.LB.PUBLIC_LB_ARN
 }
+
+module "cart" {
+  source = "github.com/devopsravi9/tf-module-mutable-app"
+  ENV                   = var.ENV
+  PRIVATE_SUBNET_ID     = module.vpc.PRIVATE_SUBNET_ID
+  VPC_ID                = module.vpc.VPC_ID
+  ALLOW_SG_CIDR         = module.vpc.PRIVATE_SUBNET_CIDR
+  COMPONENT             = "cart"
+  PORT                  = 8080
+  INSTANCE_TYPE         = "t3.micro"
+  WORKSTATION_IP        = var.WORKSTATION_IP
+  INSTANCE_COUNT        = var.INSTANCE_COUNT["CART"]["COUNT"]
+  LB_ARN                = module.LB.PRIVATE_LB_ARN
+}
+
+module "catalogue" {
+  source = "github.com/devopsravi9/tf-module-mutable-app"
+  ENV                   = var.ENV
+  PRIVATE_SUBNET_ID     = module.vpc.PRIVATE_SUBNET_ID
+  VPC_ID                = module.vpc.VPC_ID
+  ALLOW_SG_CIDR         = module.vpc.PRIVATE_SUBNET_CIDR
+  COMPONENT             = "catalogue"
+  PORT                  = 8080
+  INSTANCE_TYPE         = "t3.micro"
+  WORKSTATION_IP        = var.WORKSTATION_IP
+  INSTANCE_COUNT        = var.INSTANCE_COUNT["CATALOGUE"]["COUNT"]
+  LB_ARN                = module.LB.PRIVATE_LB_ARN
+}
+
+module "user" {
+  source = "github.com/devopsravi9/tf-module-mutable-app"
+  ENV                   = var.ENV
+  PRIVATE_SUBNET_ID     = module.vpc.PRIVATE_SUBNET_ID
+  VPC_ID                = module.vpc.VPC_ID
+  ALLOW_SG_CIDR         = module.vpc.PRIVATE_SUBNET_CIDR
+  COMPONENT             = "user"
+  PORT                  = 8080
+  INSTANCE_TYPE         = "t3.micro"
+  WORKSTATION_IP        = var.WORKSTATION_IP
+  INSTANCE_COUNT        = var.INSTANCE_COUNT["USER"]["COUNT"]
+  LB_ARN                = module.LB.PRIVATE_LB_ARN
+}
+
+module "shipping" {
+  source = "github.com/devopsravi9/tf-module-mutable-app"
+  ENV                   = var.ENV
+  PRIVATE_SUBNET_ID     = module.vpc.PRIVATE_SUBNET_ID
+  VPC_ID                = module.vpc.VPC_ID
+  ALLOW_SG_CIDR         = module.vpc.PRIVATE_SUBNET_CIDR
+  COMPONENT             = "shipping"
+  PORT                  = 8080
+  INSTANCE_TYPE         = "t3.micro"
+  WORKSTATION_IP        = var.WORKSTATION_IP
+  INSTANCE_COUNT        = var.INSTANCE_COUNT["SHIPPING"]["COUNT"]
+  LB_ARN                = module.LB.PRIVATE_LB_ARN
+}
+
+module "payment" {
+  source = "github.com/devopsravi9/tf-module-mutable-app"
+  ENV                   = var.ENV
+  PRIVATE_SUBNET_ID     = module.vpc.PRIVATE_SUBNET_ID
+  VPC_ID                = module.vpc.VPC_ID
+  ALLOW_SG_CIDR         = module.vpc.PRIVATE_SUBNET_CIDR
+  COMPONENT             = "payment"
+  PORT                  = 8080
+  INSTANCE_TYPE         = "t3.micro"
+  WORKSTATION_IP        = var.WORKSTATION_IP
+  INSTANCE_COUNT        = var.INSTANCE_COUNT["PAYMENT"]["COUNT"]
+  LB_ARN                = module.LB.PRIVATE_LB_ARN
+}
