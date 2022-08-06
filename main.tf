@@ -86,4 +86,5 @@ module "FRONTEND" {
   COMPONENT             = "frontend"
   PORT                  = 80
   INSTANCE_TYPE         = "t3.micro"
+  WORKSTATION_IP        = var.WORKSTATION_IP
 }
