@@ -91,6 +91,7 @@ module "FRONTEND" {
   INSTANCE_COUNT        = var.INSTANCE_COUNT["FRONTEND"]["COUNT"]
   //INSTANCE_COUNT        = 1
   LB_ARN                = module.LB.PUBLIC_LB_ARN
+  LB_TYPE               = "public"
 }
 
 module "cart" {
@@ -105,6 +106,7 @@ module "cart" {
   WORKSTATION_IP        = var.WORKSTATION_IP
   INSTANCE_COUNT        = var.INSTANCE_COUNT["CART"]["COUNT"]
   LB_ARN                = module.LB.PRIVATE_LB_ARN
+  LB_TYPE               = "private"
 }
 
 module "catalogue" {
@@ -119,6 +121,7 @@ module "catalogue" {
   WORKSTATION_IP        = var.WORKSTATION_IP
   INSTANCE_COUNT        = var.INSTANCE_COUNT["CATALOGUE"]["COUNT"]
   LB_ARN                = module.LB.PRIVATE_LB_ARN
+  LB_TYPE               = "private"
 }
 
 module "user" {
@@ -133,6 +136,7 @@ module "user" {
   WORKSTATION_IP        = var.WORKSTATION_IP
   INSTANCE_COUNT        = var.INSTANCE_COUNT["USER"]["COUNT"]
   LB_ARN                = module.LB.PRIVATE_LB_ARN
+  LB_TYPE               = "private"
 }
 
 module "shipping" {
@@ -147,6 +151,7 @@ module "shipping" {
   WORKSTATION_IP        = var.WORKSTATION_IP
   INSTANCE_COUNT        = var.INSTANCE_COUNT["SHIPPING"]["COUNT"]
   LB_ARN                = module.LB.PRIVATE_LB_ARN
+  LB_TYPE               = "private"
 }
 
 module "payment" {
@@ -161,4 +166,5 @@ module "payment" {
   WORKSTATION_IP        = var.WORKSTATION_IP
   INSTANCE_COUNT        = var.INSTANCE_COUNT["PAYMENT"]["COUNT"]
   LB_ARN                = module.LB.PRIVATE_LB_ARN
+  LB_TYPE               = "private"
 }
