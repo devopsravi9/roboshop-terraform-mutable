@@ -65,3 +65,13 @@ module "rabbitmq" {
   ALLOW_SG_CIDR = module.vpc.PRIVATE_SUBNET_CIDR
   WORKSTATION_IP = var.WORKSTATION_IP
 }
+
+module "LB" {
+  source = "github.com/devopsravi9/tf-module-lb"
+  ENV                   = var.ENV
+  PROJECT               = var.PROJECT
+  PUBLIC_SUBNET_ID      = module.vpc.PUBLIC_SUBNET_ID
+  PRIVATE_SUBNET_ID     = module.vpc.PRIVATE_SUBNET_ID
+  VPC_ID                = module.vpc.VPC_ID
+  ALLOW_SG_CIDR         = module.vpc.PRIVATE_SUBNET_CIDR
+}
