@@ -38,7 +38,7 @@ module "docdb" {
   DOCDB_PORT = var.DOCDB_PORT
   VPC_ID = module.vpc.VPC_ID
   DOCDB_PG_FAMILY = var.DOCDB_PG_FAMILY
-  ALLOW_SG_CIDR = module.vpc.PRIVATE_SUBNET_CIDR
+  ALLOW_SG_CIDR = concat( module.vpc.PRIVATE_SUBNET_CIDR, tolist([var.WORKSTATION_IP]))
 }
 
 module "elasticache" {
