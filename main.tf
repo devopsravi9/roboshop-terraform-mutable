@@ -109,6 +109,9 @@ module "cart" {
   INSTANCE_COUNT        = var.INSTANCE_COUNT["CART"]["COUNT"]
   LB_ARN                = module.LB.PRIVATE_LB_ARN
   LB_TYPE               = "private"
+  PRIVATE_LB_DNS        = module.LB.PRIVATE_LB_DNS
+  PRIVATE_ZONE_ID       = var.PRIVATE_ZONE_ID
+
 }
 
 module "catalogue" {
@@ -124,6 +127,8 @@ module "catalogue" {
   INSTANCE_COUNT        = var.INSTANCE_COUNT["CATALOGUE"]["COUNT"]
   LB_ARN                = module.LB.PRIVATE_LB_ARN
   LB_TYPE               = "private"
+  PRIVATE_LB_DNS        = module.LB.PRIVATE_LB_DNS
+  PRIVATE_ZONE_ID       = var.PRIVATE_ZONE_ID
 }
 
 module "user" {
@@ -139,6 +144,8 @@ module "user" {
   INSTANCE_COUNT        = var.INSTANCE_COUNT["USER"]["COUNT"]
   LB_ARN                = module.LB.PRIVATE_LB_ARN
   LB_TYPE               = "private"
+  PRIVATE_LB_DNS        = module.LB.PRIVATE_LB_DNS
+  PRIVATE_ZONE_ID       = var.PRIVATE_ZONE_ID
 }
 
 module "shipping" {
@@ -154,6 +161,8 @@ module "shipping" {
   INSTANCE_COUNT        = var.INSTANCE_COUNT["SHIPPING"]["COUNT"]
   LB_ARN                = module.LB.PRIVATE_LB_ARN
   LB_TYPE               = "private"
+  PRIVATE_LB_DNS        = module.LB.PRIVATE_LB_DNS
+  PRIVATE_ZONE_ID       = var.PRIVATE_ZONE_ID
 }
 
 module "payment" {
@@ -169,4 +178,6 @@ module "payment" {
   INSTANCE_COUNT        = var.INSTANCE_COUNT["PAYMENT"]["COUNT"]
   LB_ARN                = module.LB.PRIVATE_LB_ARN
   LB_TYPE               = "private"
+  PRIVATE_LB_DNS        = module.LB.PRIVATE_LB_DNS
+  PRIVATE_ZONE_ID       = var.PRIVATE_ZONE_ID
 }
