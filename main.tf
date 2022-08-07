@@ -154,6 +154,7 @@ module "user" {
   PRIVATE_ZONE_ID       = var.PRIVATE_ZONE_ID
   PRIVATE_LISTENER_ARN  = module.LB.PRIVATE_LISTENER_ARN
   DOCDB_ENDPOINT        = module.docdb.DOCDB_ENDPOINT
+  REDDIS_ENDPOINT       = module.elasticache.REDDIS_ENDPOINT
 }
 
 module "shipping" {
