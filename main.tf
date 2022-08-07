@@ -153,6 +153,7 @@ module "user" {
   PRIVATE_LB_DNS        = module.LB.PRIVATE_LB_DNS
   PRIVATE_ZONE_ID       = var.PRIVATE_ZONE_ID
   PRIVATE_LISTENER_ARN  = module.LB.PRIVATE_LISTENER_ARN
+  DOCDB_ENDPOINT        = module.docdb.DOCDB_ENDPOINT
 }
 
 module "shipping" {
