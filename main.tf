@@ -159,7 +159,7 @@ module "payment" {
   ENV                   = var.ENV
   PRIVATE_SUBNET_ID     = module.vpc.PRIVATE_SUBNET_ID
   VPC_ID                = module.vpc.VPC_ID
-  ALLOW_SG_CIDR         = module.vpc.PRIVATE_SUBNET_CIDR
+  ALLOW_SG_CIDR         = concat(module.vpc.PRIVATE_SUBNET_CIDR, module.vpc.PUBLIC_SUBNET_CIDR)
   COMPONENT             = "payment"
   PORT                  = 8080
   INSTANCE_TYPE         = "t3.micro"
