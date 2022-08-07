@@ -96,6 +96,7 @@ module "FRONTEND" {
   LB_TYPE               = "public"
   PRIVATE_LB_DNS        = module.LB.PRIVATE_LB_DNS
   PRIVATE_ZONE_ID       = var.PRIVATE_ZONE_ID
+  PRIVATE_LISTENER_ARN  = module.LB.PRIVATE_LISTENER_ARN
 }
 
 module "cart" {
@@ -113,6 +114,7 @@ module "cart" {
   LB_TYPE               = "private"
   PRIVATE_LB_DNS        = module.LB.PRIVATE_LB_DNS
   PRIVATE_ZONE_ID       = var.PRIVATE_ZONE_ID
+  PRIVATE_LISTENER_ARN  = module.LB.PRIVATE_LISTENER_ARN
 
 }
 
@@ -131,6 +133,7 @@ module "catalogue" {
   LB_TYPE               = "private"
   PRIVATE_LB_DNS        = module.LB.PRIVATE_LB_DNS
   PRIVATE_ZONE_ID       = var.PRIVATE_ZONE_ID
+  PRIVATE_LISTENER_ARN  = module.LB.PRIVATE_LISTENER_ARN
 }
 
 module "user" {
@@ -148,6 +151,7 @@ module "user" {
   LB_TYPE               = "private"
   PRIVATE_LB_DNS        = module.LB.PRIVATE_LB_DNS
   PRIVATE_ZONE_ID       = var.PRIVATE_ZONE_ID
+  PRIVATE_LISTENER_ARN  = module.LB.PRIVATE_LISTENER_ARN
 }
 
 module "shipping" {
@@ -165,6 +169,7 @@ module "shipping" {
   LB_TYPE               = "private"
   PRIVATE_LB_DNS        = module.LB.PRIVATE_LB_DNS
   PRIVATE_ZONE_ID       = var.PRIVATE_ZONE_ID
+  PRIVATE_LISTENER_ARN  = module.LB.PRIVATE_LISTENER_ARN
 }
 
 module "payment" {
@@ -182,4 +187,5 @@ module "payment" {
   LB_TYPE               = "private"
   PRIVATE_LB_DNS        = module.LB.PRIVATE_LB_DNS
   PRIVATE_ZONE_ID       = var.PRIVATE_ZONE_ID
+  PRIVATE_LISTENER_ARN  = module.LB.PRIVATE_LISTENER_ARN
 }
