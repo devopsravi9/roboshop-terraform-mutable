@@ -66,6 +66,7 @@ module "rabbitmq" {
   VPC_ID = module.vpc.VPC_ID
   ALLOW_SG_CIDR = module.vpc.PRIVATE_SUBNET_CIDR
   WORKSTATION_IP = var.WORKSTATION_IP
+  PRIVATE_ZONE_ID       = var.PRIVATE_ZONE_ID
 }
 
 module "LB" {
