@@ -107,7 +107,7 @@ module "cart" {
   VPC_ID                = module.vpc.VPC_ID
   ALLOW_SG_CIDR         = module.vpc.PRIVATE_SUBNET_CIDR
   COMPONENT             = "cart"
-  PORT                  = 80
+  PORT                  = 8080
   INSTANCE_TYPE         = "t3.micro"
   WORKSTATION_IP        = var.WORKSTATION_IP
   INSTANCE_COUNT        = var.INSTANCE_COUNT["CART"]["COUNT"]
@@ -126,7 +126,7 @@ module "catalogue" {
   VPC_ID                = module.vpc.VPC_ID
   ALLOW_SG_CIDR         = module.vpc.PRIVATE_SUBNET_CIDR
   COMPONENT             = "catalogue"
-  PORT                  = 80
+  PORT                  = 8080
   INSTANCE_TYPE         = "t3.micro"
   WORKSTATION_IP        = var.WORKSTATION_IP
   INSTANCE_COUNT        = var.INSTANCE_COUNT["CATALOGUE"]["COUNT"]
@@ -145,7 +145,7 @@ module "user" {
   VPC_ID                = module.vpc.VPC_ID
   ALLOW_SG_CIDR         = module.vpc.PRIVATE_SUBNET_CIDR
   COMPONENT             = "user"
-  PORT                  = 80
+  PORT                  = 8080
   INSTANCE_TYPE         = "t3.micro"
   WORKSTATION_IP        = var.WORKSTATION_IP
   INSTANCE_COUNT        = var.INSTANCE_COUNT["USER"]["COUNT"]
@@ -165,7 +165,7 @@ module "shipping" {
   VPC_ID                = module.vpc.VPC_ID
   ALLOW_SG_CIDR         = module.vpc.PRIVATE_SUBNET_CIDR
   COMPONENT             = "shipping"
-  PORT                  = 80
+  PORT                  = 8080
   INSTANCE_TYPE         = "t3.micro"
   WORKSTATION_IP        = var.WORKSTATION_IP
   INSTANCE_COUNT        = var.INSTANCE_COUNT["SHIPPING"]["COUNT"]
@@ -184,7 +184,7 @@ module "payment" {
   VPC_ID                = module.vpc.VPC_ID
   ALLOW_SG_CIDR         = module.vpc.PRIVATE_SUBNET_CIDR
   COMPONENT             = "payment"
-  PORT                  = 80
+  PORT                  = 8080
   INSTANCE_TYPE         = "t3.micro"
   WORKSTATION_IP        = var.WORKSTATION_IP
   INSTANCE_COUNT        = var.INSTANCE_COUNT["PAYMENT"]["COUNT"]
