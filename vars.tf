@@ -44,3 +44,4 @@ variable "WORKSTATION_IP" {}
 
 
 variable "INSTANCE_COUNT" {}
+variable "PROMETHEUS_IP" {}

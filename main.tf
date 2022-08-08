@@ -82,6 +82,7 @@ module "LB" {
 }
 
 module "FRONTEND" {
+  depends_on            = [module.cart,module.catalogue,module.payment,module.shipping,module.user]
   source = "github.com/devopsravi9/tf-module-mutable-app"
   ENV                   = var.ENV
   PRIVATE_SUBNET_ID     = module.vpc.PRIVATE_SUBNET_ID
@@ -98,6 +99,7 @@ module "FRONTEND" {
   PRIVATE_LB_DNS        = module.LB.PRIVATE_LB_DNS
   PRIVATE_ZONE_ID       = var.PRIVATE_ZONE_ID
   PRIVATE_LISTENER_ARN  = module.LB.PRIVATE_LISTENER_ARN
+  PROMETHEUS_IP         = var.PROMETHEUS_IP
 }
 
 module "cart" {
@@ -117,6 +119,7 @@ module "cart" {
   PRIVATE_ZONE_ID       = var.PRIVATE_ZONE_ID
   PRIVATE_LISTENER_ARN  = module.LB.PRIVATE_LISTENER_ARN
   REDDIS_ENDPOINT       = module.elasticache.REDDIS_ENDPOINT
+  PROMETHEUS_IP         = var.PROMETHEUS_IP
 }
 
 module "catalogue" {
@@ -136,6 +139,7 @@ module "catalogue" {
   PRIVATE_ZONE_ID       = var.PRIVATE_ZONE_ID
   PRIVATE_LISTENER_ARN  = module.LB.PRIVATE_LISTENER_ARN
   DOCDB_ENDPOINT        = module.docdb.DOCDB_ENDPOINT
+  PROMETHEUS_IP         = var.PROMETHEUS_IP
 }
 
 module "user" {
@@ -156,6 +160,7 @@ module "user" {
   PRIVATE_LISTENER_ARN  = module.LB.PRIVATE_LISTENER_ARN
   DOCDB_ENDPOINT        = module.docdb.DOCDB_ENDPOINT
   REDDIS_ENDPOINT       = module.elasticache.REDDIS_ENDPOINT
+  PROMETHEUS_IP         = var.PROMETHEUS_IP
 }
 
 module "shipping" {
@@ -175,6 +180,7 @@ module "shipping" {
   PRIVATE_ZONE_ID       = var.PRIVATE_ZONE_ID
   PRIVATE_LISTENER_ARN  = module.LB.PRIVATE_LISTENER_ARN
   MYSQL_ENDPOINT        = module.rds.MYSQL_ENDPOINT
+  PROMETHEUS_IP         = var.PROMETHEUS_IP
 }
 
 module "payment" {
@@ -193,4 +199,5 @@ module "payment" {
   PRIVATE_LB_DNS        = module.LB.PRIVATE_LB_DNS
   PRIVATE_ZONE_ID       = var.PRIVATE_ZONE_ID
   PRIVATE_LISTENER_ARN  = module.LB.PRIVATE_LISTENER_ARN
+  PROMETHEUS_IP         = var.PROMETHEUS_IP
 }
