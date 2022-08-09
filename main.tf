@@ -82,7 +82,7 @@ module "LB" {
 }
 
 module "FRONTEND" {
-  depends_on            = [module.cart,module.catalogue,module.payment,module.shipping,module.user]
+  //depends_on            = [module.cart,module.catalogue,module.payment,module.shipping,module.user]
   source = "github.com/devopsravi9/tf-module-mutable-app"
   ENV                   = var.ENV
   PRIVATE_SUBNET_ID     = module.vpc.PRIVATE_SUBNET_ID
